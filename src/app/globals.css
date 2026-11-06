@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Playfair Display";
+  src: url("https://fonts.gstatic.com/s/playfairdisplay/v33/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdsuriK89-DsfQ.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "DM Sans";
+  src: url("https://fonts.gstatic.com/s/dmsans/v22/rP2Hp2ywxg089UriCZOIHTc.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-savora-bg: #faf7f2;
+  --color-savora-text: #1a1713;
+  --color-savora-muted: #5c564e;
+  --color-savora-accent: #a34a28;
+  --color-savora-accent-hover: #8a3f22;
+  --color-savora-border: #1a1713;
+  --color-savora-dark: #1a1713;
+  --color-savora-dark-muted: #d6cfc7;
+  --color-savora-dark-surface: #26211c;
+  --color-savora-dark-border: #3a332c;
+  --color-savora-gold: #e8b48f;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-savora-bg);
+  color: var(--color-savora-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: var(--color-savora-accent);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-savora-accent);
+  outline-offset: 2px;
 }
